@@ -1,44 +1,27 @@
 # Grocery Store Database
 
-A relational SQL database exercise modelling the core data of a grocery-store operation.
+A relational database exercise modelling the core data and relationships of a grocery-store operation.
 
-## Overview
+## Data Model
 
-The database models:
+The schema covers:
 
-- employee positions
-- employees
-- customers
-- transactions
-- product groups
-- products
-- shopping carts
-- receipts
+- Employee positions and employees
+- Customers and transactions
+- Product groups and products
+- Shopping carts and receipts
 
-Primary keys and foreign-key constraints are defined directly in the schema.
+Primary keys and foreign-key constraints are defined in the schema to demonstrate relational integrity.
 
-## What is demonstrated
+## SQL Scripts
 
-### DDL
+| File | Purpose |
+| --- | --- |
+| [`01_create_tables.sql`](01_create_tables.sql) | Defines tables, columns and relationships |
+| [`02_insert_data.sql`](02_insert_data.sql) | Populates the schema with sample records |
+| [`03_updates_and_deletes.sql`](03_updates_and_deletes.sql) | Demonstrates targeted updates and deletes |
 
-[`01_create_tables.sql`](01_create_tables.sql) creates the relational schema and defines:
-
-- primary keys
-- foreign keys
-- column types
-- relationships between entities
-
-### DML
-
-[`02_insert_data.sql`](02_insert_data.sql) populates the database with sample positions, employees, customers, transactions, products, carts and receipts.
-
-[`03_updates_and_deletes.sql`](03_updates_and_deletes.sql) demonstrates:
-
-- UPDATE statements
-- DELETE statements
-- targeted record changes
-
-## Data model
+## Relationship Overview
 
 ```text
 Position ──< Employee
@@ -50,28 +33,26 @@ Product Group ──< Product ──< Cart
 Transaction ────────────────< Receipt
 ```
 
-## File structure
+## Concepts Demonstrated
 
-```text
-01_create_tables.sql
-02_insert_data.sql
-03_updates_and_deletes.sql
-```
+- Data Definition Language (DDL)
+- Data Manipulation Language (DML)
+- Primary and foreign keys
+- Entity relationships and schema design
+- Updating and deleting targeted records
 
-## How to use it
+## Run Locally
 
-Run the scripts in order:
+The scripts use Oracle-style data types and date literals, so use an Oracle-compatible SQL environment.
 
-1. Create the tables with `01_create_tables.sql`.
-2. Insert sample data with `02_insert_data.sql`.
-3. Apply the update/delete examples from `03_updates_and_deletes.sql`.
+Run the files in this order:
 
-The SQL syntax includes Oracle-style data types and date literals, so an Oracle-compatible SQL environment is the appropriate target.
+1. `01_create_tables.sql`
+2. `02_insert_data.sql`
+3. `03_updates_and_deletes.sql`
 
-## Project status
+Review the update/delete statements before executing them, and use a test schema rather than a database containing important data.
 
-A compact database-design and SQL exercise focused on relational modelling, constraints and basic data manipulation.
+## Project Status
 
-## License
-
-See [LICENSE](LICENSE).
+A compact database-design exercise focused on relational modelling, constraints and basic data manipulation.
